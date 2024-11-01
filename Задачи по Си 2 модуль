@@ -1,0 +1,123 @@
+#include <stdio.h>
+// Задание 1
+int main() {
+    int a = 10; 
+    int b = 4;  
+    
+    int difference = a - b;
+
+    printf("Разность %d и %d равна %d.\n", a, b, difference);
+
+}
+
+#include <stdio.h>
+// Задание 2
+int main() {
+    int a = 7;  
+    int b = 5;  
+    
+    int product = a * b;
+
+    printf("Произведение %d и %d равно %d.\n", a, b, product);
+}
+
+#include <stdio.h>
+// Задание 3
+int main() {
+    int x = 2;  
+    int y = 2; 
+    
+    int product = x * y;
+    int sum = x + y;
+
+    if (product == sum) {
+        printf("Произведение %d и %d равно %d.\n", x, y, product);
+        printf("Сумма %d и %d равна %d.\n", x, y, sum);
+        printf("Условие выполнено: произведение равно сумме.\n");
+    } else {
+        printf("Условие не выполнено.\n");
+    }
+
+}
+
+#include <stdio.h>
+// Задание 4
+int main() {
+    int num1 = 25;   
+    int num2 = 10;   
+
+    int difference = num1 - num2;
+
+    float quotient = (float)num1 / (float)num2;
+
+    printf("Разность %d и %d равна %d.\n", num1, num2, difference);
+    printf("Частное %d и %d равно %.2f.\n", num1, num2, quotient);
+}
+
+#include <stdio.h>
+// Задание 5
+int main() {
+    float num1 = 12.5;  
+    float num2 = 2.3;   
+
+    float remainder = (float)((int)num1 % (int)num2); 
+
+    printf("Остаток от деления %.2f на %.2f равен %.2f.\n", num1, num2, remainder);
+}
+
+#include <stdio.h>
+// Задание 6
+int main() {
+    int age1 = 25;  
+    int age2 = 30;  
+
+    float average = (age1 + age2) / 2.0;  
+
+    printf("Среднее арифметическое возраста двух людей: %.2f лет\n", average);
+}
+
+#include <stdio.h>
+// Задание 7
+int main() {
+    int a = 100; 
+    int b = 30;  
+    int c = 15;  
+
+    int sum = a + b + c;
+
+    float average = sum / 3.0; 
+
+    printf("Сумма всех трех переменных: %d\n", sum);
+    printf("Среднее арифметическое: %.2f\n", average);
+}
+
+#include <stdio.h>
+// Задание 8
+int main() {
+    int a = 20;  
+    int b = 4;   
+
+    int difference = a - b;
+
+    int product = a * b;
+
+    float quotient = (float)a / b;
+
+    printf("Разность: %d\n", difference);
+    printf("Произведение: %d\n", product);
+    printf("Частное: %.2f\n", quotient);
+}
+
+#include <stdio.h>
+// Задание 9
+int main() {
+    float first = 20.0;   
+    float second = 4.0;   
+    float third = 6.0;    
+    float fourth = first + third; 
+
+    printf("Первая переменная: %.1f\n", first);
+    printf("Вторая переменная: %.1f\n", second);
+    printf("Третья переменная: %.1f\n", third);
+    printf("Четвертая переменная (сумма первой и третьей): %.1f\n", fourth);
+}
