@@ -1,0 +1,165 @@
+#include <stdio.h>
+#include <string.h>
+//1
+int main() {
+    char str1[100], str2[100];
+
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+    str1[strcspn(str1, "\n")] = 0;
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+    str2[strcspn(str2, "\n")] = 0;
+
+    if (strcmp(str1, str2) == 0) {
+        printf("Strings match\n");
+    } else {
+        printf("Strings differ\n");
+    }
+}
+
+#include <stdio.h>
+//2
+int main() {
+    int value;
+
+    printf("Enter an integer: ");
+    scanf("%d", &value);
+
+    if (value < 10 || value > 20) {
+        printf("Outside the boundary (10..20)\n");
+    } else {
+        printf("Inside the boundary\n");
+    }
+}
+
+#include <stdio.h>
+//3
+int main() {
+    int value = 7;
+
+    switch (value) {
+        case 3:
+            printf("Value is 3\n");
+            break;
+        case 7:
+            printf("Value is 7\n");
+            break;
+        case 9:
+            printf("Value is 9\n");
+            break;
+        default:
+            printf("Value is not in the set [3, 7, 9]\n");
+    }
+}
+
+#include <stdio.h>
+//4
+int main() {
+    int a, b, c;
+
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a == b && b == c) {
+        printf("All numbers are equal\n");
+    } else {
+        int min = a;
+        if (b < min) min = b;
+        if (c < min) min = c;
+        printf("The smallest number is: %d\n", min);
+    }
+}
+
+#include <stdio.h>
+//5
+int main() {
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("Even\n");
+    } else {
+        printf("Odd\n");
+    }
+}
+
+#include <stdio.h>
+//6
+int main() {
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    if (number == 0) {
+        printf("Zero\n");
+    } else if (number > 0) {
+        printf("Positive\n");
+    } else {
+        printf("Negative\n");
+    }
+}
+
+#include <stdio.h>
+//7
+int main() {
+    int grade;
+
+    printf("Enter student grade: ");
+    scanf("%d", &grade);
+
+    if (grade >= 90 && grade <= 100) {
+        printf("Excellent\n");
+    } else if (grade >= 75 && grade <= 89) {
+        printf("Good\n");
+    } else if (grade >= 50 && grade <= 74) {
+        printf("Satisfactory\n");
+    } else if (grade >= 0 && grade <= 49) {
+        printf("Unsatisfactory\n");
+    } else {
+        printf("Invalid grade\n");
+    }
+}
+
+#include <stdio.h>
+//8
+int main() {
+    int month, year, days;
+
+    printf("Enter month (1-12): ");
+    scanf("%d", &month);
+    printf("Enter year: ");
+    scanf("%d", &year);
+
+    if (month < 1 || month > 12) {
+        printf("Invalid month\n");
+        return 1;
+    }
+
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            days = 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            days = 30;
+            break;
+        case 2:
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                days = 29;
+            } else {
+                days = 28;
+            }
+            break;
+        default:
+            days = 0;
+            break;
+    }
+
+    printf("Days in month: %d\n", days);
+
+    return 0;
+}
