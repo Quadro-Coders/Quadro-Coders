@@ -1,0 +1,194 @@
+#include <stdio.h>
+//1
+int main() {
+    int n;
+    printf("Введите число n: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        printf("Hello World!\n");
+    }
+    return 0;
+}
+
+#include <stdio.h>
+//2
+int main() {
+    int a, b;
+    printf("Введите два числа a и b: ");
+    scanf("%d %d", &a, &b);
+    for (int i = a; i <= b; i++) {
+        if (i % 2 != 0) {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+}
+
+#include <stdio.h>
+//3
+int main() {
+    int n;
+    printf("Введите сторону ромба n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        for (int j = i; j < n; j++) printf(" ");
+        for (int j = 1; j <= (2 * i - 1); j++) printf("*");
+        printf("\n");
+    }
+    for (int i = n - 1; i >= 1; i--) {
+        for (int j = n; j > i; j--) printf(" ");
+        for (int j = 1; j <= (2 * i - 1); j++) printf("*");
+        printf("\n");
+    }
+    return 0;
+}
+
+#include <stdio.h>
+//4
+int main() {
+    int h, w;
+    printf("Введите высоту h и ширину w: ");
+    scanf("%d %d", &h, &w);
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+#include <stdio.h>
+//5
+int main() {
+    double a, b;
+    char op;
+    while (1) {
+        printf("Введите два числа и оператор (+, -, *, /) или 'q' для выхода: ");
+        if (scanf(" %lf %lf %c", &a, &b, &op) != 3) break;
+        switch (op) {
+            case '+': printf("Результат: %.2lf\n", a + b); break;
+            case '-': printf("Результат: %.2lf\n", a - b); break;
+            case '*': printf("Результат: %.2lf\n", a * b); break;
+            case '/': 
+                if (b != 0) printf("Результат: %.2lf\n", a / b);
+                else printf("Ошибка: деление на ноль!\n");
+                break;
+            default: printf("Неизвестный оператор!\n");
+        }
+    }
+    return 0;
+}
+
+#include <stdio.h>
+//6
+int main() {
+    FILE *file = fopen("array.txt", "r");
+    int num;
+    if (file) {
+        while (fscanf(file, "%d", &num) != EOF) {
+            printf("%d\n", num);
+        }
+        fclose(file);
+    } else {
+        printf("Ошибка при открытии файла.\n");
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//7
+int main() {
+    int n;
+    printf("Введите размер массива n: ");
+    scanf("%d", &n);
+    srand(time(0));
+    for (int i = 0; i < n; i++) {
+        printf("%d ", rand() % 100); // генерируем числа от 0 до 99
+    }
+    printf("\n");
+    return 0;
+}
+
+#include <stdio.h>
+//8
+int main() {
+    // Одномерный массив
+    int n;
+    printf("Введите размер одномерного массива: ");
+    scanf("%d", &n);
+    double arr[n], sum = 0;
+    for (int i = 0; i < n; i++) {
+        printf("Введите элемент %d: ", i + 1);
+        scanf("%lf", &arr[i]);
+        sum += arr[i];
+    }
+    printf("Сумма элементов: %.2lf\n", sum);
+    
+    // Двумерный массив
+    int m, p;
+    printf("Введите размер двумерного массива (высота и ширина): ");
+    scanf("%d %d", &m, &p);
+    int matrix[m][p], max = -2147483648, min = 2147483647;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            printf("Введите элемент [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+            if (matrix[i][j] > max) max = matrix[i][j];
+            if (matrix[i][j] < min) min = matrix[i][j];
+        }
+    }
+    printf("Максимальный элемент: %d\n", max);
+    printf("Минимальный элемент: %d\n", min);
+    
+    return 0;
+}
+
+#include <stdio.h>
+#include <string.h>
+//9
+int main() {
+    char str[100];
+    printf("Введите строку: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = 0; // Удаляем новый символ, если он есть
+    for (int i = strlen(str) - 1; i >= 0; i--) {
+        printf("%c", str[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+#include <stdio.h>
+//10
+int main() {
+    int a, b;
+    printf("Введите два целых числа a и b: ");
+    scanf("%d %d", &a, &b);
+    if (b != 0) {
+        printf("Результат деления: %.2f\n", (float)a / b);
+    } else {
+        printf("Ошибка: деление на ноль!\n");
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <string.h>
+//11
+int main() {
+    char str[100];
+    while (1) {
+        printf("Введите строку (или пустую строку для выхода): ");
+        fgets(str, sizeof(str), stdin);
+        if (str[0] == '\n') break;
+        str[strcspn(str, "\n")] = 0; // Удаляем новый символ, если он есть
+        for (int i = 0; str[i]; i++) {
+            str[i] = toupper(str[i]);
+        }
+        printf("%s\n", str);
+    }
+    return 0;
+}
